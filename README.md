@@ -32,3 +32,4 @@ ln -s /etc/letsencrypt/archive/mydomain.com-0001 /etc/letsencrypt/archive/mydoma
     SSLCertificateFile /etc/letsencrypt/live/mydomain.com/cert.pem
     SSLCertificateKeyFile /etc/letsencrypt/live/mydomain.com/privkey.pem
     SSLCertificateChainFile /etc/letsencrypt/live/mydomain.com/chain.pem
+

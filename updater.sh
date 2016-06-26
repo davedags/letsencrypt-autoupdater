@@ -29,14 +29,10 @@ fi
 CURRENT_MONTH=$(date +%m)
 cd ${LETSENCRYPT_BASE_DIR}
 
-printf "stopping httpd\n";
-systemctl stop httpd;
-sleep 1;
-
 printf "Updating Certificates ... \n\n"
 
-./letsencrypt-auto -c /etc/letsencrypt/cli.ini certonly --standalone
+./letsencrypt-auto -c /etc/letsencrypt/cli.ini certonly
 
-printf "starting httpd\n";
-systemctl start httpd;
+printf "reloading httpd\n";
+systemctl reload httpd;
 
