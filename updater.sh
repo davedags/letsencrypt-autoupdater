@@ -1,5 +1,16 @@
 #!/bin/sh
 
+
+LINK=$(readlink -f "$0");
+
+if [ -z $LINK ]; then
+    DIR=$PWD
+else
+    DIR=$(dirname $LINK);
+fi
+
+cd $DIR
+
 if [ -z $LETSENCRYPT_BASE_DIR ]; then
 
     if [ ! -f ./.env ]; then
@@ -9,12 +20,14 @@ if [ -z $LETSENCRYPT_BASE_DIR ]; then
     source ./.env
 
     if [ -z $LETSENCRYPT_BASE_DIR ]; then
-      LETSENCRYPT_BASE_DIR=$(pwd)
+      LETSENCRYPT_BASE_DIR=$PWD
       echo 'Warning: LETSENCRYPT_BASE_DIR not defined, using current directory: ' $LETSENCRYPT_BASE_DIR
     fi
-    cd ${LETSENCRYPT_BASE_DIR}
+
 fi
+
 CURRENT_MONTH=$(date +%m)
+cd ${LETSENCRYPT_BASE_DIR}
 
 printf "stopping httpd\n";
 systemctl stop httpd;
