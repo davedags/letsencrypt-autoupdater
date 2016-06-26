@@ -26,7 +26,7 @@ if [ -z $LETSENCRYPT_BASE_DIR ]; then
 
 fi
 
-CURRENT_MONTH=$(date +%m)
+
 cd ${LETSENCRYPT_BASE_DIR}
 
 printf "Updating Certificates ... \n\n"
