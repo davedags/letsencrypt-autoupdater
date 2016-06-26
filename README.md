@@ -31,6 +31,8 @@
 
 
     SSLCertificateFile /etc/letsencrypt/live/mydomain.com/cert.pem
+
     SSLCertificateKeyFile /etc/letsencrypt/live/mydomain.com/privkey.pem
+
     SSLCertificateChainFile /etc/letsencrypt/live/mydomain.com/chain.pem
 
