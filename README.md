@@ -23,8 +23,9 @@
 
 2. With this configuration, Letsencrypt puts the certificates in the following directory:  /etc/letsencrypt/live/mydomain.com-0001 (or equivalent).   You should create a permanent symlink such as:
 
-#ln -s /etc/letsencrypt/live/mydomain.com-0001 /etc/letsencrypt/live/mydomain.com
-#ln -s /etc/letsencrypt/archive/mydomain.com-0001 /etc/letsencrypt/archive/mydomain.com
+    ln -s /etc/letsencrypt/live/mydomain.com-0001 /etc/letsencrypt/live/mydomain.com
+
+    ln -s /etc/letsencrypt/archive/mydomain.com-0001 /etc/letsencrypt/archive/mydomain.com
 
 3. Update your Apache config where you specify the SSL Certs
 
