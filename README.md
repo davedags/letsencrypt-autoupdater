@@ -19,12 +19,12 @@
 
 ## Important
 
-1. This auto script assumes Apache HTTP and will perform a systemctl stop/start.  You may need to modify the script if you are running in an environment that does not contain systemd.    
+1. This auto script assumes Apache HTTP and will perform a systemctl stop/start.  You may need to modify the script if you are running in an environment that does not contain systemd or you run nginx
 
 2. With this configuration, Letsencrypt puts the certificates in the following directory:  /etc/letsencrypt/live/mydomain.com-0001 (or equivalent).   You should create a permanent symlink such as:
 
-ln -s /etc/letsencrypt/live/mydomain.com-0001 /etc/letsencrypt/live/mydomain.com-0001
-ln -s /etc/letsencrypt/archive/mydomain.com-0001 /etc/letsencrypt/archive/mydomain.com-0001
+ln -s /etc/letsencrypt/live/mydomain.com-0001 /etc/letsencrypt/live/mydomain.com
+ln -s /etc/letsencrypt/archive/mydomain.com-0001 /etc/letsencrypt/archive/mydomain.com
 
 3. Update your Apache config where you specify the SSL Certs
 
