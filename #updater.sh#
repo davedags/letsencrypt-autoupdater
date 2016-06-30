@@ -14,10 +14,12 @@ cd $DIR
 if [ -z $LETSENCRYPT_BASE_DIR ]; then
 
     if [ ! -f ./.env ]; then
-	    echo 'Warning: .env file missing';
+	    echo 'Warning: .env file not found';
     else
         source ./.env
     fi
+
+
 
     if [ -z $LETSENCRYPT_BASE_DIR ]; then
       LETSENCRYPT_BASE_DIR=$PWD
@@ -25,6 +27,7 @@ if [ -z $LETSENCRYPT_BASE_DIR ]; then
     fi
 
 fi
+
 
 cd ${LETSENCRYPT_BASE_DIR}
 
