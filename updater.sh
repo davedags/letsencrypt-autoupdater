@@ -1,5 +1,10 @@
 #!/bin/sh
 
+MONTH=`date +%-m`
+
+if [[ $(( $MONTH % 2 )) -eq 0 ]]; then
+    exit;
+fi
 
 LINK=$(readlink -f "$0");
 
